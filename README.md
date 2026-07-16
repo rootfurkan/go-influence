@@ -221,3 +221,9 @@ firebase use --add
 - Kampanya ve teklif takibi
 - Platform ayarlari
 - Komisyon/odeme kayitlari icin temel yapi
+
+## Demo Hesaplar
+Admin : furkan@go.com -> 123456
+Marka Hesabı : brand1@seed.go-influence.local -> 123456
+Influencer Hesabı : influencer1@seed.go-influence.local -> 123456
+
