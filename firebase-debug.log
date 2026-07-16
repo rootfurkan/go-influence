@@ -1,0 +1,74 @@
+[debug] [2026-07-15T23:16:52.189Z] ----------------------------------------------------------------------
+[debug] [2026-07-15T23:16:52.191Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\furka\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only firestore:rules --project go-influence
+[debug] [2026-07-15T23:16:52.192Z] CLI Version:   15.23.0
+[debug] [2026-07-15T23:16:52.192Z] Platform:      win32
+[debug] [2026-07-15T23:16:52.192Z] Node Version:  v22.17.0
+[debug] [2026-07-15T23:16:52.192Z] Detected Agent: codex_cli
+[debug] [2026-07-15T23:16:52.192Z] Time:          Thu Jul 16 2026 02:16:52 GMT+0300 (GMT+03:00)
+[debug] [2026-07-15T23:16:52.193Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-07-15T23:16:57.193Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-07-15T23:16:57.195Z] > authorizing via signed-in user (furko.yrlmz@gmail.com)
+[debug] [2026-07-15T23:16:57.196Z] [iam] checking project go-influence for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-07-15T23:16:57.210Z] Checked if tokens are valid: false, expires at: 1784156699780
+[debug] [2026-07-15T23:16:57.211Z] Checked if tokens are valid: false, expires at: 1784156699780
+[debug] [2026-07-15T23:16:57.211Z] > refreshing access token with scopes: []
+[debug] [2026-07-15T23:16:57.216Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-07-15T23:16:57.216Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-07-15T23:16:57.927Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-07-15T23:16:57.928Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-07-15T23:16:57.946Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/go-influence:testIamPermissions [none]
+[debug] [2026-07-15T23:16:57.946Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/go-influence:testIamPermissions  x-goog-user-project=go-influence
+[debug] [2026-07-15T23:16:57.946Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/go-influence:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-07-15T23:16:58.262Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/go-influence:testIamPermissions 200
+[debug] [2026-07-15T23:16:58.262Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/go-influence:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'go-influence'...
+[info] 
+[info] i  deploying firestore 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-07-15T23:16:58.270Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:16:58.270Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:16:58.271Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/go-influence/databases/(default) [none]
+[debug] [2026-07-15T23:16:58.626Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/go-influence/databases/(default) 200
+[debug] [2026-07-15T23:16:58.626Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/go-influence/databases/(default) {"name":"projects/go-influence/databases/(default)","uid":"9a7c078a-ab0f-41f4-b522-37fd972dbb3e","createTime":"2026-07-07T20:02:39.870231Z","updateTime":"2026-07-07T20:02:39.870231Z","locationId":"europe-west3","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-07-15T22:16:54.953554Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"h","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IPOfxKfo1ZUDMIuAqdWvwZUD"}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-07-15T23:16:58.628Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:16:58.628Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:16:58.629Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/go-influence:test [none]
+[debug] [2026-07-15T23:16:58.629Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/go-influence:test [omitted]
+[debug] [2026-07-15T23:16:59.612Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/go-influence:test 200
+[debug] [2026-07-15T23:16:59.612Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/go-influence:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-07-15T23:16:59.614Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:16:59.615Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:16:59.615Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/go-influence/releases pageSize=10&pageToken=
+[debug] [2026-07-15T23:17:00.337Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/go-influence/releases 200
+[debug] [2026-07-15T23:17:00.337Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/go-influence/releases {"releases":[{"name":"projects/go-influence/releases/cloud.firestore","rulesetName":"projects/go-influence/rulesets/af455f62-4336-4f62-8e19-cb613f5bb3f3","createTime":"2026-07-07T20:02:42.277083Z","updateTime":"2026-07-15T22:05:02.202284Z"}]}
+[debug] [2026-07-15T23:17:00.338Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:17:00.338Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:17:00.338Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/go-influence/rulesets/af455f62-4336-4f62-8e19-cb613f5bb3f3 [none]
+[debug] [2026-07-15T23:17:00.696Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/go-influence/rulesets/af455f62-4336-4f62-8e19-cb613f5bb3f3 200
+[debug] [2026-07-15T23:17:00.696Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/go-influence/rulesets/af455f62-4336-4f62-8e19-cb613f5bb3f3 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2026-07-15T23:17:00.697Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:17:00.698Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:17:00.698Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/go-influence/rulesets [none]
+[debug] [2026-07-15T23:17:00.698Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/go-influence/rulesets [omitted]
+[debug] [2026-07-15T23:17:05.029Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/go-influence/rulesets 200
+[debug] [2026-07-15T23:17:05.029Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/go-influence/rulesets {"name":"projects/go-influence/rulesets/e49551e1-f09f-488f-9545-8c08907ff28f","source":{"files":[{"content":"rules_version = '2';\n\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    function signedIn() {\n      return request.auth != null;\n    }\n\n    function isOwner(uid) {\n      return signedIn() && request.auth.uid == uid;\n    }\n\n    function userDoc() {\n      return get(/databases/$(database)/documents/users/$(request.auth.uid));\n    }\n\n    function isAdmin() {\n      return signedIn() && userDoc().data.role == 'admin';\n    }\n\n    function isBrand() {\n      return signedIn() && userDoc().data.role == 'brand';\n    }\n\n    function isInfluencer() {\n      return signedIn() && userDoc().data.role == 'influencer';\n    }\n\n    match /users/{uid} {\n      allow read: if isOwner(uid) || isAdmin();\n      allow create: if isOwner(uid) || isAdmin();\n      allow update: if isOwner(uid) || isAdmin();\n    }\n\n    match /brands/{uid} {\n      allow read: if signedIn();\n      allow create, update: if isOwner(uid) || isAdmin();\n    }\n\n    match /influencers/{uid} {\n      allow read: if signedIn();\n      allow create, update: if isOwner(uid) || isAdmin();\n    }\n\n    match /campaigns/{campaignId} {\n      allow read: if signedIn();\n      allow create: if isAdmin()\n        || (isBrand() && request.resource.data.brandUid == request.auth.uid);\n      allow update, delete: if isAdmin()\n        || (isBrand() && resource.data.brandUid == request.auth.uid);\n    }\n\n    match /campaignOffers/{offerId} {\n      allow create: if (\n          isInfluencer()\n          && request.resource.data.creatorId == request.auth.uid\n          && (!('influencerUid' in request.resource.data) || request.resource.data.influencerUid == request.auth.uid)\n        ) || (\n          isBrand()\n          && request.resource.data.brandUid == request.auth.uid\n          && request.resource.data.creatorId is string\n          && request.resource.data.creatorId.size() > 0\n          && (!('influencerUid' in request.resource.data) || request.resource.data.influencerUid == request.resource.data.creatorId)\n        );\n      allow read: if isAdmin()\n        || resource.data.brandUid == request.auth.uid\n        || resource.data.creatorId == request.auth.uid\n        || resource.data.influencerUid == request.auth.uid;\n      allow update: if isAdmin()\n        || resource.data.brandUid == request.auth.uid\n        || resource.data.creatorId == request.auth.uid\n        || resource.data.influencerUid == request.auth.uid;\n    }\n\n    match /campaignMatches/{matchId} {\n      allow create, update: if isAdmin()\n        || (isBrand() && request.resource.data.brandUid == request.auth.uid);\n      allow read: if isAdmin()\n        || resource.data.brandUid == request.auth.uid\n        || resource.data.influencerUid == request.auth.uid;\n      allow delete: if isAdmin()\n        || (isBrand() && resource.data.brandUid == request.auth.uid);\n    }\n\n    match /chatThreads/{threadId} {\n      allow create: if signedIn()\n        && request.auth.uid in request.resource.data.participants;\n      allow read, update: if signedIn()\n        && request.auth.uid in resource.data.participants;\n    }\n\n    match /settings/{settingId} {\n      allow read: if signedIn();\n      allow write: if isAdmin();\n    }\n\n    match /transactions/{transactionId} {\n      allow read: if isAdmin()\n        || resource.data.brandUid == request.auth.uid\n        || resource.data.influencerUid == request.auth.uid;\n      allow write: if isAdmin();\n    }\n  }\n}\n","name":"firestore.rules"}]},"createTime":"2026-07-15T23:17:01.267583Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2026-07-15T23:17:05.029Z] [rules] created ruleset projects/go-influence/rulesets/e49551e1-f09f-488f-9545-8c08907ff28f
+[debug] [2026-07-15T23:17:05.030Z] [rules] releasing cloud.firestore with ruleset projects/go-influence/rulesets/e49551e1-f09f-488f-9545-8c08907ff28f
+[debug] [2026-07-15T23:17:05.030Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:17:05.031Z] Checked if tokens are valid: true, expires at: 1784161016928
+[debug] [2026-07-15T23:17:05.031Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/go-influence/releases/cloud.firestore [none]
+[debug] [2026-07-15T23:17:05.031Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/go-influence/releases/cloud.firestore {"release":{"name":"projects/go-influence/releases/cloud.firestore","rulesetName":"projects/go-influence/rulesets/e49551e1-f09f-488f-9545-8c08907ff28f"}}
+[debug] [2026-07-15T23:17:05.910Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/go-influence/releases/cloud.firestore 200
+[debug] [2026-07-15T23:17:05.910Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/go-influence/releases/cloud.firestore {"name":"projects/go-influence/releases/cloud.firestore","rulesetName":"projects/go-influence/rulesets/e49551e1-f09f-488f-9545-8c08907ff28f","createTime":"2026-07-07T20:02:42.277083Z","updateTime":"2026-07-15T23:17:02.069090Z"}
+[debug] [2026-07-15T23:17:05.910Z] [rules] updated release projects/go-influence/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/go-influence/overview

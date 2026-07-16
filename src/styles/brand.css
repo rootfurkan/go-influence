@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  
+  --color-primary: #9000d7;
+  --color-primary-container: #b026ff;
+  --color-on-primary-container: #fffdff;
+  
+  --color-secondary: #755565;
+  --color-secondary-container: #fed5e7;
+  --color-on-secondary-container: #795a69;
+  
+  --color-tertiary: #626200;
+  --color-tertiary-container: #b1b031;
+  --color-on-tertiary-container: #424200;
+  
+  --color-background: #f8f9fa;
+  --color-surface: #f8f9fa;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e7e8e9;
+  --color-surface-container-highest: #e1e3e4;
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #4f4255;
+  --color-outline: #817286;
+  --color-outline-variant: #d2c1d7;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+}
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #d2c1d7;
+  border-radius: 10px;
+}
+
+/* Ambient glows */
+.blur-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.radial-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(176, 38, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.neon-shadow {
+  box-shadow: 0px 10px 30px rgba(176, 38, 255, 0.15);
+}
+
+.bento-card {
+  background: #ffffff;
+  border: 1px solid #F1F1F1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0px 10px 30px rgba(176, 38, 255, 0.08);
+}
+
+.match-score-gradient {
+  background: conic-gradient(#b026ff calc(var(--percentage) * 1%), #f3f4f5 0);
+}
+
+/* Base Body Styles */
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #f8f9fa;
+  color: #191c1d;
+  min-height: 100vh;
+}

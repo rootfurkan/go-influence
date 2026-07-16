@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom palette colors for InfluencerMatch */
+  --color-primary: #9000d7;
+  --color-primary-container: #b026ff;
+  --color-secondary-container: #fed5e7;
+  --color-on-secondary-container: #795a69;
+  --color-tertiary: #626200;
+  --color-surface-container-low: #f3f4f5;
+  --color-on-surface-variant: #4f4255;
+  --color-on-surface: #191c1d;
+  --color-surface: #f8f9fa;
+  --color-outline-variant: #d2c1d7;
+  --color-primary-fixed: #f4d9ff;
+  --color-on-primary-fixed-variant: #7000a8;
+  --color-tertiary-fixed: #e9e963;
+  --color-on-tertiary-fixed-variant: #4a4900;
+  --color-secondary-fixed: #ffd8e9;
+  --color-on-secondary-fixed-variant: #5b3e4d;
+  --color-secondary-fixed-dim: #e3bccd;
+}
+
+/* Custom design system utility classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.neon-glow-purple {
+  box-shadow: 0px 10px 40px rgba(176, 38, 255, 0.15);
+}
+
+.lift-on-hover {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.lift-on-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0px 15px 35px rgba(144, 0, 215, 0.12);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.ambient-glow-1 {
+  background: radial-gradient(circle at 50% 50%, rgba(144, 0, 215, 0.08) 0%, rgba(144, 0, 215, 0) 75%);
+}
+
+.ambient-glow-2 {
+  background: radial-gradient(circle at 50% 50%, rgba(254, 213, 231, 0.3) 0%, rgba(254, 213, 231, 0) 70%);
+}
+
+/* Timeline Custom Lines */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #b026ff 15%, #b026ff 85%, transparent);
+}
+
+.timeline-line-yellow {
+  background: linear-gradient(to bottom, transparent, #F9F871 15%, #F9F871 85%, transparent);
+}
+
+/* Base resets */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}

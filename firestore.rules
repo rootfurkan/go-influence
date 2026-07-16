@@ -1,0 +1,104 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function isAdmin() {
+      return signedIn() && userDoc().data.role == 'admin';
+    }
+
+    function isBrand() {
+      return signedIn() && userDoc().data.role == 'brand';
+    }
+
+    function isInfluencer() {
+      return signedIn() && userDoc().data.role == 'influencer';
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create: if isOwner(uid) || isAdmin();
+      allow update: if isOwner(uid) || isAdmin();
+    }
+
+    match /brands/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isOwner(uid) || isAdmin();
+    }
+
+    match /influencers/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isOwner(uid) || isAdmin();
+    }
+
+    match /campaigns/{campaignId} {
+      allow read: if signedIn();
+      allow create: if isAdmin()
+        || (isBrand() && request.resource.data.brandUid == request.auth.uid);
+      allow update, delete: if isAdmin()
+        || (isBrand() && resource.data.brandUid == request.auth.uid);
+    }
+
+    match /campaignOffers/{offerId} {
+      allow create: if (
+          isInfluencer()
+          && request.resource.data.creatorId == request.auth.uid
+          && (!('influencerUid' in request.resource.data) || request.resource.data.influencerUid == request.auth.uid)
+        ) || (
+          isBrand()
+          && request.resource.data.brandUid == request.auth.uid
+          && request.resource.data.creatorId is string
+          && request.resource.data.creatorId.size() > 0
+          && (!('influencerUid' in request.resource.data) || request.resource.data.influencerUid == request.resource.data.creatorId)
+        );
+      allow read: if isAdmin()
+        || resource.data.brandUid == request.auth.uid
+        || resource.data.creatorId == request.auth.uid
+        || resource.data.influencerUid == request.auth.uid;
+      allow update: if isAdmin()
+        || resource.data.brandUid == request.auth.uid
+        || resource.data.creatorId == request.auth.uid
+        || resource.data.influencerUid == request.auth.uid;
+    }
+
+    match /campaignMatches/{matchId} {
+      allow create, update: if isAdmin()
+        || (isBrand() && request.resource.data.brandUid == request.auth.uid);
+      allow read: if isAdmin()
+        || resource.data.brandUid == request.auth.uid
+        || resource.data.influencerUid == request.auth.uid;
+      allow delete: if isAdmin()
+        || (isBrand() && resource.data.brandUid == request.auth.uid);
+    }
+
+    match /chatThreads/{threadId} {
+      allow create: if signedIn()
+        && request.auth.uid in request.resource.data.participants;
+      allow read, update: if signedIn()
+        && request.auth.uid in resource.data.participants;
+    }
+
+    match /settings/{settingId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /transactions/{transactionId} {
+      allow read: if isAdmin()
+        || resource.data.brandUid == request.auth.uid
+        || resource.data.influencerUid == request.auth.uid;
+      allow write: if isAdmin();
+    }
+  }
+}

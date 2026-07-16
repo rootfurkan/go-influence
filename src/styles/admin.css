@@ -1,0 +1,29 @@
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ambient-shadow {
+  box-shadow: 0px 10px 30px rgba(176, 38, 255, 0.06);
+}
+
+.active-glow {
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.15);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.animate-fade-in {
+  animation: adminFadeIn 0.25s ease both;
+}
+
+@keyframes adminFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
